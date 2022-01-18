@@ -94,4 +94,4 @@ display-url-api:2.3.5
 configuration-as-code:1.53
 job-dsl:1.77
 ansicolor:1.0.0
-prometheus-metrics:2.0.10
+prometheus:2.0.10
