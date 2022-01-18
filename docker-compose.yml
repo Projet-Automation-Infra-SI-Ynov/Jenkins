@@ -9,6 +9,7 @@ services:
   jenkins:
     build:
       context: .
+    hostname: jenkins
     ports:
       - 80:8081
       - 50000:50000
