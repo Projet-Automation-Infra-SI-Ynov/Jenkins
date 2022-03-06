@@ -79,5 +79,6 @@ tool:
                     id: "3.6.2"
 
 
-#jobs:
-  #- file: /var/jenkins_config/jobs/folders.groovy
+jobs:
+  - file: /var/jenkins_config/jobs/folders.groovy
+  - file: /var/jenkins_config/jobs/grafana.groovy
