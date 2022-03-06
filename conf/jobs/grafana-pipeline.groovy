@@ -10,23 +10,9 @@ pipeline {
         ansiColor('xterm')
     }
     stages {
-        stage('git checkout') {
-            steps {
-                dir("/home/centos/docker/grafana"){
-                    git branch: "${params.BRANCH}", url: 'https://github.com/Projet-Automation-Infra-SI-Ynov/Grafana'
-                }
-            }
-        }
-        stage('Modify hosts folder') {
-            steps {
-                sh "sed -i 's/IP_JENKINS/${params.PUBLIC_IP}/g' /home/centos/docker/grafana/prometheus.yml "
-            }
-        }
         stage('Execute playbook') {
             steps {
-                dir("/home/centos/ansible/"){
-                    sh "ansible-playbook -i inventory/hosts --user centos grafana.yml"
-                }
+                sh "ansible-playbook -i /var/jenkins_config/inventori.ini -u centos /var/jenkins_config/grafana.yml"
             }
         }
     }
