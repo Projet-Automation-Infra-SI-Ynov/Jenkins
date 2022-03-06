@@ -12,7 +12,7 @@ pipeline {
     stages {
         stage('Execute playbook') {
             steps {
-                sh "ansible-playbook -i /var/jenkins_config/inventori.ini -u centos /var/jenkins_config/grafana.yml"
+                sh "ansible-playbook -i /var/jenkins_config/inventory.ini -u centos -kK /var/jenkins_config/grafana.yml"
             }
         }
     }
