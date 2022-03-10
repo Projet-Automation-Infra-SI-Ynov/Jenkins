@@ -27,4 +27,7 @@ RUN curl -fsSL https://apt.releases.hashicorp.com/gpg | apt-key add - && apt-add
 # Ansible
 RUN apt-get -y install ansible
 
+# SSHpass
+RUN apt-get -y install sshpass
+
 USER jenkins

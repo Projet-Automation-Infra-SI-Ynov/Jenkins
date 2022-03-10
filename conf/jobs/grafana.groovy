@@ -4,6 +4,14 @@ def pipelineScript = new File('/var/jenkins_config/jobs/grafana-pipeline.groovy'
 
 pipelineJob('Cac/grafana') {
     description("Ansible")
+    parameters {
+        stringParam {
+            name('GRAFANA_IP')
+            defaultValue('172.16.100.X')
+            description('Enter the Grafana IP address')
+            trim(false)
+        }
+    }
     definition {
         cps {
             script(pipelineScript)
