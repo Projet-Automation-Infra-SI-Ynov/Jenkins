@@ -1,6 +1,10 @@
 FROM jenkins/jenkins
 
 ENV JAVA_OPTS -Djenkins.install.runSetupWizard=false -Dpermissive-script-security.enabled=true
+ENV CASC_JENKINS_CONFIG /var/jenkins_config/jenkins.yaml
+ENV JENKINS_ADMIN_ID admin
+ENV JENKINS_ADMIN_PASSWORD BryanCoco2021!
+ENV JENKINS_OPTS "--httpPort=8081"
 
 USER root
 RUN apt-get update && \

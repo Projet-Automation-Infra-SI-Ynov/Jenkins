@@ -7,7 +7,7 @@ pipelineJob('Cac/grafana') {
     parameters {
         stringParam {
             name('GRAFANA_IP')
-            defaultValue('172.16.100.X')
+            defaultValue('192.168.10.X')
             description('Enter the Grafana IP address')
             trim(false)
         }
