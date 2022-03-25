@@ -1,4 +1,4 @@
-FROM jenkins/jenkins
+FROM jenkins/jenkins:lts-jdk11
 
 ENV JAVA_OPTS -Djenkins.install.runSetupWizard=false -Dpermissive-script-security.enabled=true
 ENV CASC_JENKINS_CONFIG /var/jenkins_config/jenkins.yaml
