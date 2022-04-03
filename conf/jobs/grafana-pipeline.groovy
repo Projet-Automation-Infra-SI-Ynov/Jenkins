@@ -17,12 +17,12 @@ pipeline {
         }
         stage('Add Grafana address IP') {
             steps {
-                sh "sed -i 's/IP_GRAFANA/${params.GRAFANA_IP}/g' ./inventory.ini"
+                sh "sed -i 's/IP_GRAFANA/${params.GRAFANA_IP}/g' /opt/ansible/inventory.ini"
             }
         }
         stage('Execute playbook') {
             steps {
-                sh "ansible-playbook -i ./inventory.ini ./grafana.yml"
+                sh "ansible-playbook -i /opt/ansible/inventory.ini /opt/ansible/grafana.yml"
             }
         }
     }

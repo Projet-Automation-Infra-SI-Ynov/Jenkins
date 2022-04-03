@@ -17,12 +17,12 @@ pipeline {
         }
         stage('Add Grafana address IP') {
             steps {
-                sh "sed -i 's/IP_REGISTRY/${params.REGISTRY_IP}/g' ./registry.ini"
+                sh "sed -i 's/IP_REGISTRY/${params.REGISTRY_IP}/g' /opt/ansible/registry.ini"
             }
         }
         stage('Execute playbook') {
             steps {
-                sh "ansible-playbook -i ./registry.ini ./registry.yml"
+                sh "ansible-playbook -i /opt/ansible/registry.ini /opt/ansible/registry.yml"
             }
         }
     }

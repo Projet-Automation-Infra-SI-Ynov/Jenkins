@@ -39,4 +39,7 @@ RUN apt-get install python3 python3-pip -y
 RUN pip3 -V
 RUN pip3 install docker docker-compose
 
+ADD ansible/ /opt
+RUN chown -R jenkins /opt
+
 USER jenkins
