@@ -1,8 +1,8 @@
 #!groovy
 println('------------------------------------------------------------------Import Job CaC/grafana')
-def pipelineScript = new File('/var/jenkins_config/jobs/grafana-pipeline.groovy').getText("UTF-8")
+def pipelineScript = new File('/var/jenkins_config/jobs/registry-pipeline.groovy').getText("UTF-8")
 
-pipelineJob('Cac/grafana') {
+pipelineJob('Cac/registry') {
     description("Ansible")
     parameters {
         stringParam {
@@ -12,7 +12,7 @@ pipelineJob('Cac/grafana') {
             trim(false)
         }
         stringParam {
-            name('GRAFANA_IP')
+            name('REGISTRY_IP')
             defaultValue('192.168.10.X')
             description('Enter the Grafana IP address')
             trim(false)

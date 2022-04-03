@@ -1,19 +1,9 @@
----
-
 - hosts: grafana
   become: yes
-  tasks:
-    - name: Download Grafana Git
-      git: 
-        repo: https://github.com/Projet-Automation-Infra-SI-Ynov/Grafana.git
-        dest: /home/centos/grafana
-        version: develop
-    
-    # - name: Add Jenkins address IP
-    #   shell: sed -i 's/IP_JENKINS/172.16.100.10/g' /home/centos/grafana/prometheus.yml
-
-    - name: Go to the grafana folder
-      shell: cd /home/centos/grafana/
-
-    - name: Start grafana image
-      shell: docker-compose up -d
+  roles:
+    - role: Docker
+    - role: Git
+    - role: Grafana
+  environment:
+    GF_SECURITY_ADMIN_USER: admin
+    GF_SECURITY_ADMIN_PASSWORD: BryanCoco2021!

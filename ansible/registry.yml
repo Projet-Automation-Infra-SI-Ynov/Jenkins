@@ -1,0 +1,9 @@
+- hosts: registry
+  become: yes
+  roles:
+    - role: Docker
+    - role: Git
+    - role: Registry
+  environment:
+    ENV_DOCKER_REGISTRY_HOST: 192.168.10.15
+    ENV_DOCKER_REGISTRY_PORT: 5000

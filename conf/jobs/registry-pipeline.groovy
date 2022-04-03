@@ -12,17 +12,17 @@ pipeline {
     stages {
         stage('Git checkout') {
             steps {
-                git branch: "${params.BRANCH}", url: 'https://github.com/Projet-Automation-Infra-SI-Ynov/Grafana'
+                git branch: "${params.BRANCH}", url: 'https://github.com/Projet-Automation-Infra-SI-Ynov/Registry'
             }
         }
         stage('Add Grafana address IP') {
             steps {
-                sh "sed -i 's/IP_GRAFANA/${params.GRAFANA_IP}/g' ./ansible/inventory.ini"
+                sh "sed -i 's/IP_REGISTRY/${params.REGISTRY_IP}/g' ./ansible/registry.ini"
             }
         }
         stage('Execute playbook') {
             steps {
-                sh "ansible-playbook -i ./ansible/inventory.ini ./ansible/grafana.yml"
+                sh "ansible-playbook -i ./ansible/registry.ini ./ansible/registry.yml"
             }
         }
     }
