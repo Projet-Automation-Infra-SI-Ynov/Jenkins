@@ -35,7 +35,7 @@ RUN apt-get -y install ansible
 RUN apt-get -y install sshpass
 
 # Python3
-RUN apt-get install python3 python3-pip
+RUN apt-get install python3 python3-pip -y
 RUN pip3 -V
 RUN pip3 install docker docker-compose
 
