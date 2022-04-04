@@ -83,3 +83,5 @@ jobs:
   - file: /var/jenkins_config/jobs/folders.groovy
   - file: /var/jenkins_config/jobs/grafana.groovy
   - file: /var/jenkins_config/jobs/registry.groovy
+  - file: /var/jenkins_config/jobs/nodeexporter.groovy
+  - file: /var/jenkins_config/jobs/k3s.groovy
