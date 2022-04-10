@@ -17,6 +17,24 @@ pipelineJob('Cac/node_exporter') {
             description('Enter the Grafana IP address')
             trim(false)
         }
+        stringParam {
+            name('REGISTRY_IP')
+            defaultValue('192.168.10.X')
+            description('Enter the Registry IP address')
+            trim(false)
+        }
+        stringParam {
+            name('MASTER_IP')
+            defaultValue('192.168.10.X')
+            description('Enter the K3S Master IP address')
+            trim(false)
+        }
+            stringParam {
+            name('WORKER_IP')
+            defaultValue('192.168.10.X')
+            description('Enter the K3S Worker IP address')
+            trim(false)
+        }
     }
     definition {
         cps {
