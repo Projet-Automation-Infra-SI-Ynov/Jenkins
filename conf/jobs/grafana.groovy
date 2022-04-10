@@ -17,6 +17,18 @@ pipelineJob('Cac/grafana') {
             description('Enter the Grafana IP address')
             trim(false)
         }
+        stringParam {
+            name('JENKINS_IP')
+            defaultValue('192.168.10.X')
+            description('Enter the Jenkins IP address')
+            trim(false)
+        }
+        stringParam {
+            name('REGISTRY_IP')
+            defaultValue('192.168.10.X')
+            description('Enter the Registry IP address')
+            trim(false)
+        }
     }
     definition {
         cps {
