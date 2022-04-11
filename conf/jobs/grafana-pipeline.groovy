@@ -18,12 +18,12 @@ pipeline {
         // ----------------- Prometheus -----------------
         stage('Add Jenkins address IP') {
             steps {
-                sh "sed -i 's/IP_JENKINS/${params.JENKINS_IP}/g' ./prometheus.yml"
+                sh "sed -i 's/JENKINS2/${params.JENKINS_IP}/g' ./Ansible/Grafana/tasks/main.yml"
             }
         }
         stage('Add Registry address IP') {
             steps {
-                sh "sed -i 's/IP_REGISTRY/${params.REGISTRY_IP}/g' ./prometheus.yml"
+                sh "sed -i 's/REGISTRY2/${params.REGISTRY_IP}/g' ./Ansible/Grafana/tasks/main.yml"
             }
         }
         // ----------------- Grafana -----------------
