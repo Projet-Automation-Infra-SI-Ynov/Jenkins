@@ -17,7 +17,7 @@ pipeline {
         }
         stage('')
             steps {
-                sh "sed -i 's/###IP_MASTER###/${params.MASTER_IP}/g' ./k3s-worker/vars/main.yml "
+                sh "sed -i 's/###IP_MASTER###/${params.MASTER_IP}/g' ./k3s-worker/tasks/main.yml "
             }
         stage('Execute playbook') {
             steps {

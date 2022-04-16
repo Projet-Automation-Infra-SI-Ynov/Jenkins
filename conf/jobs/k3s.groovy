@@ -14,7 +14,7 @@ pipelineJob('Cac/k3s') {
         stringParam {
             name('MASTER_IP')
             defaultValue('192.168.10.X')
-            description('Enter the Grafana IP address')
+            description('Enter the master IP address')
             trim(false)
         }
     }
