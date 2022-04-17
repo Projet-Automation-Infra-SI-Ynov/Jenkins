@@ -15,6 +15,16 @@ pipeline {
                 git branch: "${params.BRANCH}", url: 'https://github.com/Projet-Automation-Infra-SI-Ynov/Images'
             }
         }
+        stage('Add password for login to registry') {
+            steps {
+                sh "sed -i 's/USER/${params.USERNAME}/g' ./image.yml"
+            }
+        }
+        stage('Add password for login to registry') {
+            steps {
+                sh "sed -i 's/PASSWORD/${params.PASSWORD}/g' ./image.yml"
+            }
+        }
         stage('Add Registry address IP to inventory file') {
             steps {
                 sh "sed -i 's/IP_REGISTRY/${params.REGISTRY_IP}/g' ./image.ini"

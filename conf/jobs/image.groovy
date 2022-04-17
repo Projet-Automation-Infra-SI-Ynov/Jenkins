@@ -12,6 +12,18 @@ pipelineJob('CaC/image') {
             trim(false)
         }
         stringParam {
+            name('USERNAME')
+            defaultValue('administrateur')
+            description('Enter the Registry IP address')
+            trim(false)
+        }
+        stringParam {
+            name('PASSWORD')
+            defaultValue('X')
+            description('Enter the Registry IP address')
+            trim(false)
+        }
+        stringParam {
             name('REGISTRY_IP')
             defaultValue('192.168.10.X')
             description('Enter the Registry IP address')
