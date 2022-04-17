@@ -88,3 +88,4 @@ jobs:
   - file: /var/jenkins_config/jobs/jenkinsImages.groovy
   - file: /var/jenkins_config/jobs/grafanaImages.groovy
   - file: /var/jenkins_config/jobs/terraform.groovy
+  - file: /var/jenkins_config/jobs/image.groovy

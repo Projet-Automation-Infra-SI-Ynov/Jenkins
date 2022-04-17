@@ -27,7 +27,7 @@ pipeline {
         }
         stage('Execute playbook') {
             steps {
-                sh "ansible-playbook -i ./Grafana/grfana.ini ./Grafana/grafana.yml"
+                sh "ansible-playbook -i ./Grafana/grafana.ini ./Grafana/grafana.yml"
             }
         }
     }

@@ -25,6 +25,11 @@ pipeline {
                 sh "sed -i 's/IP_REGISTRY/${params.REGISTRY_IP}/g' ./ansible/registry.ini"
             }
         }
+        stage('Add Registry address IP in inventory file') {
+            steps {
+                sh "sed -i 's/IP_REGISTRY/${params.REGISTRY_IP}/g' ./docker-compose.yml"
+            }
+        }
         stage('Execute playbook') {
             steps {
                 sh "ansible-playbook -i ./ansible/registry.ini ./ansible/registry.yml"
