@@ -3,7 +3,7 @@
 pipeline {
     agent any
     environment {
-        TERRAFORM = 'TERRAFORM'
+        ANSIBLE = 'ANSIBLE'
     }
     options {
         buildDiscarder(logRotator(numToKeepStr: '50'))
@@ -15,7 +15,7 @@ pipeline {
                 git branch: "${params.BRANCH}", url: 'https://github.com/Projet-Automation-Infra-SI-Ynov/Images'
             }
         }
-        stage('Add password for login to registry') {
+        stage('Add user for login to registry') {
             steps {
                 sh "sed -i 's/USER/${params.USERNAME}/g' ./image.yml"
             }
