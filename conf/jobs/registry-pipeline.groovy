@@ -17,7 +17,7 @@ pipeline {
         }
         stage('Add Registry address IP in ansible role') {
             steps {
-                sh "sed -i 's/REGISTRY2/${params.REGISTRY_IP}/g' ./Ansible/Grafana/tasks/main.yml"
+                sh "sed -i 's/REGISTRY2/${params.REGISTRY_IP}/g' ./ansible/Registry/tasks/main.yml"
             }
         }
         stage('Add Registry address IP in inventory file') {
