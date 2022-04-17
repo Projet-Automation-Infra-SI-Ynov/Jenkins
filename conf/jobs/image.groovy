@@ -24,6 +24,12 @@ pipelineJob('CaC/image') {
             trim(false)
         }
         stringParam {
+            name('GRAFANA_IP')
+            defaultValue('192.168.10.X')
+            description('Enter the Registry IP address')
+            trim(false)
+        }
+        stringParam {
             name('REGISTRY_IP')
             defaultValue('192.168.10.X')
             description('Enter the Registry IP address')

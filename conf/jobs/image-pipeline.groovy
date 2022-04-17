@@ -25,9 +25,9 @@ pipeline {
                 sh "sed -i 's/PASSWORD/${params.PASSWORD}/g' ./image.yml"
             }
         }
-        stage('Add Registry address IP to inventory file') {
+        stage('Add Grafana address IP to inventory file') {
             steps {
-                sh "sed -i 's/IP_REGISTRY/${params.REGISTRY_IP}/g' ./image.ini"
+                sh "sed -i 's/IP_REGISTRY/${params.GRAFANA_IP}/g' ./image.ini"
             }
         }
         stage('Add Registry address IP to playbook file') {
