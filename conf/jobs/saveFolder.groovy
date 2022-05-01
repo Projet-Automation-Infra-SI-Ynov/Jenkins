@@ -2,7 +2,7 @@
 println('------------------------------------------------------------------Import Job Saves/saveFolder')
 def pipelineScript = new File('/var/jenkins_config/jobs/saveFolder-pipeline.groovy').getText("UTF-8")
 
-pipelineJob('Saves/saveImages') {
+pipelineJob('Saves/saveFolder') {
     description("Ansible")
     parameters {
         stringParam {
