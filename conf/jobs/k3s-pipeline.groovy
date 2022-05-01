@@ -15,7 +15,7 @@ pipeline {
                 git branch: "${params.BRANCH}", url: 'https://github.com/Projet-Automation-Infra-SI-Ynov/Deploy_k3s'
             }
         }
-        stage('')
+        stage('Add k3s-master IP address to the token to join worker with his')
             steps {
                 sh "sed -i 's/###IP_MASTER###/${params.MASTER_IP}/g' ./k3s-worker/tasks/main.yml "
             }
