@@ -14,13 +14,13 @@ pipelineJob('CaC/image') {
         stringParam {
             name('USERNAME')
             defaultValue('administrateur')
-            description('Enter the Registry IP address')
+            description('Enter user to push images')
             trim(false)
         }
         stringParam {
             name('PASSWORD')
             defaultValue('X')
-            description('Enter the Registry IP address')
+            description('Enter the password of user')
             trim(false)
         }
         stringParam {

@@ -17,6 +17,30 @@ pipelineJob('Saves/saveImages') {
             description('Enter the Grafana IP address')
             trim(false)
         }
+        stringParam {
+            name('REGISTRY_IP')
+            defaultValue('192.168.10.X')
+            description('Enter the registry IP address')
+            trim(false)
+        }
+        stringParam {
+            name('BACKUP_SERVER_IP')
+            defaultValue('192.168.10.X')
+            description('Enter the backup server IP address')
+            trim(false)
+        }
+        stringParam {
+            name('USERNAME')
+            defaultValue('administrateur')
+            description('Enter user of the backup server')
+            trim(false)
+        }
+        stringParam {
+            name('PASSWORD')
+            defaultValue('X')
+            description('Enter password of user')
+            trim(false)
+        }
     }
     definition {
         cps {
