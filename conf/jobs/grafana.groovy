@@ -29,6 +29,12 @@ pipelineJob('Cac/grafana') {
             description('Enter the Registry IP address')
             trim(false)
         }
+        stringParam {
+            name('BACKUP_SERVER_IP')
+            defaultValue('192.168.10.X')
+            description('Enter the backup server IP address')
+            trim(false)
+        }
     }
     definition {
         cps {

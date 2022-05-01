@@ -26,6 +26,11 @@ pipeline {
                 sh "sed -i 's/REGISTRY2/${params.REGISTRY_IP}/g' ./Ansible/Grafana/tasks/main.yml"
             }
         }
+        stage('Add backup address IP') {
+            steps {
+                sh "sed -i 's/BACKUP2/${params.BACKUP_SERVER_IP}/g' ./Ansible/Grafana/tasks/main.yml"
+            }
+        }
         // ----------------- Grafana -----------------
         stage('Add Grafana address IP') {
             steps {
