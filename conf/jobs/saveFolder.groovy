@@ -1,6 +1,6 @@
 #!groovy
-println('------------------------------------------------------------------Import Job Saves/saveImages')
-def pipelineScript = new File('/var/jenkins_config/jobs/saveImages-pipeline.groovy').getText("UTF-8")
+println('------------------------------------------------------------------Import Job Saves/saveFolder')
+def pipelineScript = new File('/var/jenkins_config/jobs/saveFolder-pipeline.groovy').getText("UTF-8")
 
 pipelineJob('Saves/saveImages') {
     description("Ansible")
