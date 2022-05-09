@@ -37,12 +37,12 @@ pipelineJob('CaC/image') {
         }
         choice {
             name('IMAGES_PULL')
-            choices(['jenkins', 'grafana/grafana:8.4.4', 'prom/prometheus:v2.34.0', 'grafana/loki:2.4.1', 'grafana/promtail:2.4.1', 'quay.io/prometheus/node-exporter'])
+            choices(['jenkins', 'grafana/grafana:8.4.4', 'prom/prometheus:v2.34.0', 'quay.io/prometheus/node-exporter'])
             description('Select the image in the server')
         }
         choice {
             name('IMAGESTOREGISTRY')
-            choices(['jenkins:1.0', 'grafana:8.4.4', 'prometheus:2.34.0', 'loki:2.4.1', 'promtail:2.4.1', 'node_exporter:1.0'])
+            choices(['jenkins:1.0', 'grafana:8.4.4', 'prometheus:2.34.0', 'node_exporter:1.0'])
             description('Select the image to push in the registry')
         }
     }
