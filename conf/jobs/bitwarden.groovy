@@ -1,8 +1,8 @@
 #!groovy
-println('------------------------------------------------------------------Import Job CaC/registry')
-def pipelineScript = new File('/var/jenkins_config/jobs/registry-pipeline.groovy').getText("UTF-8")
+println('------------------------------------------------------------------Import Job CaC/bitwarden')
+def pipelineScript = new File('/var/jenkins_config/jobs/bitwarden-pipeline.groovy').getText("UTF-8")
 
-pipelineJob('CaC/registry') {
+pipelineJob('CaC/bitwarden') {
     description("Ansible")
     parameters {
         stringParam {
