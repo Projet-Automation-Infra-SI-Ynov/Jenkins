@@ -29,10 +29,16 @@ pipelineJob('Cac/node_exporter') {
             description('Enter the K3S Master IP address')
             trim(false)
         }
-            stringParam {
+        stringParam {
             name('WORKER_IP')
             defaultValue('192.168.10.X')
             description('Enter the K3S Worker IP address')
+            trim(false)
+        }
+        stringParam {
+            name('LOG_IP')
+            defaultValue('192.168.10.X')
+            description('Enter the Graylog IP address')
             trim(false)
         }
     }

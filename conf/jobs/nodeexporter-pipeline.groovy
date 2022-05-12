@@ -58,5 +58,16 @@ pipeline {
                 sh "ansible-playbook -i ./K3s-worker/k3s-worker.ini ./K3s-worker/k3s-worker.yml"
             }
         }
+        // ----------------- Graylog -----------------
+        stage('Add Docker Graylog address IP') {
+            steps {
+                sh "sed -i 's/IP_LOG/${params.LOG_IP}/g' ./Graylog/graylog.ini"
+            }
+        }
+        stage('Execute playbook for Graylog server') {
+            steps {
+                sh "ansible-playbook -i ./Graylog/graylog.ini ./Graylog/graylog.yml"
+            }
+        }
     }
 }
