@@ -39,4 +39,6 @@ RUN apt-get install python3 python3-pip -y
 RUN pip3 -V
 RUN pip3 install docker docker-compose
 
+EXPOSE 8020
+
 USER jenkins
