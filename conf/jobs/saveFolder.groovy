@@ -24,6 +24,12 @@ pipelineJob('Saves/saveFolder') {
             trim(false)
         }
         stringParam {
+            name('LOG_IP')
+            defaultValue('192.168.10.X')
+            description('Enter the Graylog IP address')
+            trim(false)
+        }
+        stringParam {
             name('BACKUP_SERVER_IP')
             defaultValue('192.168.10.X')
             description('Enter the backup server IP address')

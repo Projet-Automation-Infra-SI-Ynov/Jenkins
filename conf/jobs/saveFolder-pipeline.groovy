@@ -31,6 +31,14 @@ pipeline {
                 sh "sed -i 's/IP_BACKUP_SERVER/${params.BACKUP_SERVER_IP}/g' ./ansible/dockerRegistry/registry.yml"
             }
         }
+        stage('Add graylog address IP to inventory file') {
+            steps {
+                sh "sed -i 's/IP_LOG/${params.LOG_IP}/g' ./ansible/dockerLogs/logs.ini"
+                sh "sed -i 's/PASSWORD/${params.PASSWORD}/g' ./ansible/dockerLogs/logs.yml"
+                sh "sed -i 's/USER/${params.USERNAME}/g' ./ansible/dockerLogs/logs.yml"
+                sh "sed -i 's/IP_BACKUP_SERVER/${params.BACKUP_SERVER_IP}/g' ./ansible/dockerLogs/logs.yml"
+            }
+        }
         stage('Execute docker tools playbook') {
             steps {
                 sh "ansible-playbook -i ./ansible/dockerTools/tools.ini ./ansible/dockerTools/tools.yml"
@@ -39,6 +47,11 @@ pipeline {
         stage('Execute docker registry playbook') {
             steps {
                 sh "ansible-playbook -i ./ansible/dockerRegistry/registry.ini ./ansible/dockerRegistry/registry.yml"
+            }
+        }
+        stage('Execute docker log playbook') {
+            steps {
+                sh "ansible-playbook -i ./ansible/dockerLogs/logs.ini ./ansible/dockerLogs/logs.yml"
             }
         }
     }

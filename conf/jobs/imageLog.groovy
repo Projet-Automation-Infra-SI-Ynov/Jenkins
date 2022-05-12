@@ -1,8 +1,8 @@
 #!groovy
-println('------------------------------------------------------------------Import Job CaC/image-tools')
-def pipelineScript = new File('/var/jenkins_config/jobs/image-pipeline.groovy').getText("UTF-8")
+println('------------------------------------------------------------------Import Job CaC/image-log')
+def pipelineScript = new File('/var/jenkins_config/jobs/imageLog-pipeline.groovy').getText("UTF-8")
 
-pipelineJob('CaC/image-tools') {
+pipelineJob('CaC/image-log') {
     description("Terraform")
     parameters {
         stringParam {
@@ -24,9 +24,9 @@ pipelineJob('CaC/image-tools') {
             trim(false)
         }
         stringParam {
-            name('GRAFANA_IP')
+            name('LOG_IP')
             defaultValue('192.168.10.X')
-            description('Enter the Registry IP address')
+            description('Enter the Graylog IP address')
             trim(false)
         }
         stringParam {
@@ -37,12 +37,12 @@ pipelineJob('CaC/image-tools') {
         }
         choice {
             name('IMAGES_PULL')
-            choices(['jenkins', 'grafana/grafana:8.4.4', 'prom/prometheus:v2.34.0', 'quay.io/prometheus/node-exporter'])
+            choices(['mongo:4.2', 'docker.elastic.co/elasticsearch/elasticsearch-oss:7.10.2', 'graylog/graylog:4.2', 'nginx:1.21.6'])
             description('Select the image in the server')
         }
         choice {
             name('IMAGESTOREGISTRY')
-            choices(['jenkins:1.0', 'grafana:8.4.4', 'prometheus:2.34.0', 'node_exporter:1.0'])
+            choices(['mongo:4.2', 'elasticsearch:7.10.2', 'graylog:4.2', 'nginx:1.21.6'])
             description('Select the image to push in the registry')
         }
     }

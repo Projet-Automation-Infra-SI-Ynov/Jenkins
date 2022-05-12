@@ -92,3 +92,4 @@ jobs:
   - file: /var/jenkins_config/jobs/backup.groovy
   - file: /var/jenkins_config/jobs/graylog.groovy
   - file: /var/jenkins_config/jobs/bitwarden.groovy
+  - file: /var/jenkins_config/jobs/imageLog.groovy

@@ -12,7 +12,7 @@ pipeline {
     stages {
         stage('Git checkout') {
             steps {
-                git branch: "${params.BRANCH}", url: 'https://github.com/Projet-Automation-Infra-SI-Ynov/Registry'
+                git branch: "${params.BRANCH}", url: 'https://github.com/Projet-Automation-Infra-SI-Ynov/Bitwarden'
             }
         }
         stage('Add Registry address IP in inventory file') {
