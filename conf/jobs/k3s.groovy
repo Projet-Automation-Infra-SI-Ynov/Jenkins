@@ -17,6 +17,12 @@ pipelineJob('Cac/k3s') {
             description('Enter the master IP address')
             trim(false)
         }
+        stringParam {
+            name('WORKER_IP')
+            defaultValue('192.168.10.X')
+            description('Enter the worker IP address')
+            trim(false)
+        }
     }
     definition {
         cps {
