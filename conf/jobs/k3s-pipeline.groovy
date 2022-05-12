@@ -10,7 +10,7 @@ pipeline {
         ansiColor('xterm')
     }
     stages {
-        stage('Git checkout') {
+        stage('Git checkout ') {
             steps {
                 git branch: "${params.BRANCH}", url: 'https://github.com/Projet-Automation-Infra-SI-Ynov/Deploy_k3s'
             }
