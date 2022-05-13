@@ -30,7 +30,7 @@ pipeline {
                 sh "sed -i 's/IP_LOG/${params.LOG_IP}/g' ./ansible/save-log.ini"
             }
         }
-        stage('Execute playbook') {
+        stage('Execute Docker-log playbook') {
             steps {
                 sh "ansible-playbook -i ./ansible/save-log.ini ./ansible/save-log.yml"
             }
