@@ -25,5 +25,15 @@ pipeline {
                 sh "ansible-playbook -i ./ansible/save.ini ./ansible/save.yml"
             }
         }
+        stage('Add Graylog address IP to inventory file') {
+            steps {
+                sh "sed -i 's/IP_LOG/${params.LOG_IP}/g' ./ansible/save-log.ini"
+            }
+        }
+        stage('Execute playbook') {
+            steps {
+                sh "ansible-playbook -i ./ansible/save-log.ini ./ansible/save-log.yml"
+            }
+        }
     }
 }
