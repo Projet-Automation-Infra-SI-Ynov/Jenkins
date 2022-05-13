@@ -32,6 +32,16 @@ pipeline {
             }
         }
         // ----------------- Grafana -----------------
+        stage('Add Grafana user address IP') {
+            steps {
+                sh "sed -i 's/USER2/${params.GF_USER}/g' ./Ansible/Grafana/tasks/main.yml"
+            }
+        }
+        stage('Add Grafana password address IP') {
+            steps {
+                sh "sed -i 's/PWD2/${params.GF_PASSWORD}/g' ./Ansible/Grafana/tasks/main.yml"
+            }
+        }
         stage('Add Grafana address IP') {
             steps {
                 sh "sed -i 's/IP_GRAFANA/${params.GRAFANA_IP}/g' ./Ansible/grafana.ini"

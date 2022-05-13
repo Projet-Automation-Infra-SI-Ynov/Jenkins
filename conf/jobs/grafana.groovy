@@ -12,6 +12,18 @@ pipelineJob('Cac/grafana') {
             trim(false)
         }
         stringParam {
+            name('GF_USER')
+            defaultValue('admin')
+            description('Define grafana user')
+            trim(false)
+        }
+        stringParam {
+            name('GF_PASSWORD')
+            defaultValue('X')
+            description('Define password Grafana user')
+            trim(false)
+        }
+        stringParam {
             name('GRAFANA_IP')
             defaultValue('192.168.10.X')
             description('Enter the Grafana IP address')
