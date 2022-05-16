@@ -1,6 +1,6 @@
 #!groovy
 println('------------------------------------------------------------------Import Job CaC/k3s')
-def pipelineScript = new File('/var/jenkins_config/jobs/k3s-pipeline-pipeline.groovy').getText("UTF-8")
+def pipelineScript = new File('/var/jenkins_config/jobs/k3s-pipeline.groovy').getText("UTF-8")
 
 pipelineJob('Cac/k3s') {
     description("Ansible")
