@@ -2,8 +2,8 @@ FROM jenkins/jenkins:lts-jdk11
 
 ENV JAVA_OPTS -Djenkins.install.runSetupWizard=false -Dpermissive-script-security.enabled=true
 ENV CASC_JENKINS_CONFIG /var/jenkins_config/jenkins.yaml
-ENV JENKINS_ADMIN_ID admin
-ENV JENKINS_ADMIN_PASSWORD BryanCoco2021!
+ENV JENKINS_ADMIN_ID JKS_USER
+ENV JENKINS_ADMIN_PASSWORD JKS_PWD
 ENV JENKINS_OPTS "--httpPort=8081"
 
 USER root
