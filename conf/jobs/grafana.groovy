@@ -47,6 +47,24 @@ pipelineJob('Cac/grafana') {
             description('Enter the backup server IP address')
             trim(false)
         }
+        stringParam {
+            name('MASTER_IP')
+            defaultValue('192.168.10.X')
+            description('Enter the backup server IP address')
+            trim(false)
+        }
+        stringParam {
+            name('WORKER_IP')
+            defaultValue('192.168.10.X')
+            description('Enter the backup server IP address')
+            trim(false)
+        }
+        stringParam {
+            name('LOG_IP')
+            defaultValue('192.168.10.X')
+            description('Enter the Graylog IP address')
+            trim(false)
+        }
     }
     definition {
         cps {
