@@ -18,7 +18,7 @@ pipeline {
         // ----------------- Prometheus -----------------
         stage('Add Jenkins address IP') {
             steps {
-                sh "sed -i 's/JENKINS2/${params.JENKINS_IP}/g' ./Ansible/Nginx/tasks/main.yml"
+                sh "sed -i 's/JENKINS2/${params.JENKINS_IP}/g' ./ansible/Nginx/tasks/main.yml"
             }
         }
         stage('Add Registry address IP') {

@@ -31,17 +31,17 @@ pipeline {
                 sh "sed -i 's/BACKUP2/${params.BACKUP_SERVER_IP}/g' ./Ansible/Grafana/tasks/main.yml"
             }
         }
-        stage('Add backup address IP') {
+        stage('Add k3s-master address IP') {
             steps {
                 sh "sed -i 's/MASTER2/${params.MASTER_IP}/g' ./Ansible/Grafana/tasks/main.yml"
             }
         }
-        stage('Add backup address IP') {
+        stage('Add k3s-worker address IP') {
             steps {
                 sh "sed -i 's/WORKER2/${params.WORKER_IP}/g' ./Ansible/Grafana/tasks/main.yml"
             }
         }
-        stage('Add backup address IP') {
+        stage('Add Graylog address IP') {
             steps {
                 sh "sed -i 's/GRAYLOG/${params.LOG_IP}/g' ./Ansible/Grafana/tasks/main.yml"
             }
