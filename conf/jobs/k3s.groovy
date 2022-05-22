@@ -12,6 +12,12 @@ pipelineJob('Cac/k3s') {
             trim(false)
         }
         stringParam {
+            name('REGISTRY_IP')
+            defaultValue('192.168.10.X')
+            description('Enter the registry IP address')
+            trim(false)
+        }
+        stringParam {
             name('MASTER_IP')
             defaultValue('192.168.10.X')
             description('Enter the master IP address')

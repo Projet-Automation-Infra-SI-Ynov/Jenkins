@@ -15,6 +15,12 @@ pipeline {
                 git branch: "${params.BRANCH}", url: 'https://github.com/Projet-Automation-Infra-SI-Ynov/Deploy_k3s'
             }
         }
+        stage('Add Registry address IP') {
+            steps {
+                sh "sed -i 's/REGISTRY2/${params.REGISTRY_IP}/g' ./k3s-master/tasks/main.yml"
+                sh "sed -i 's/REGISTRY2/${params.REGISTRY_IP}/g' ./k3s-worker/tasks/main.yml"
+            }
+        }
         stage('Add k3s-master IP address to the token to join worker with his') {
             steps {
                 sh "sed -i 's/###IP_MASTER###/${params.MASTER_IP}/g' ./k3s-worker/tasks/main.yml "
