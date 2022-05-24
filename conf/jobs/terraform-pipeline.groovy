@@ -20,6 +20,11 @@ pipeline {
                 sh "sed -i 's/NAME/${params.SERVER_NAME}/g' ./main.tf"
             }
         }
+        stage('Remove files & folders') {
+            steps {
+                sh "rm -rf ./*"
+            }
+        }
         stage('Terraform init') {
             steps {
                 sh "terraform init"
@@ -28,14 +33,6 @@ pipeline {
         stage('Terraform apply') {
             steps {
                 sh "terraform ${params.ACTION} --auto-approve"
-            }
-        }
-        stage('Remove files & folders') {
-            steps {
-                sh "rm -rf ./terraform/"
-                sh "rm -rf ./terraform.lock.hcl"
-                sh "rm -rf ./terraform.tfstate"
-                sh "rm -rf ./terraform.tfstate.backup"
             }
         }
     }
