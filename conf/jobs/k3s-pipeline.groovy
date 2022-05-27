@@ -12,7 +12,7 @@ pipeline {
     stages {
         stage('Git checkout ') {
             steps {
-                git branch: "${params.BRANCH}", url: 'https://github.com/Projet-Automation-Infra-SI-Ynov/Deploy_k3s'
+                git branch: "${params.BRANCH}", url: 'https://github.com/Projet-Automation-Infra-SI-Ynov/Deploy_k3s_V2.git'
             }
         }
         stage('Execute script to install k3s') {
