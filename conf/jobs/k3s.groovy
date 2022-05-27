@@ -11,24 +11,6 @@ pipelineJob('Cac/k3s') {
             description('Branch to retrieve from Git')
             trim(false)
         }
-        stringParam {
-            name('REGISTRY_IP')
-            defaultValue('192.168.10.X')
-            description('Enter the registry IP address')
-            trim(false)
-        }
-        stringParam {
-            name('MASTER_IP')
-            defaultValue('192.168.10.X')
-            description('Enter the master IP address')
-            trim(false)
-        }
-        stringParam {
-            name('WORKER_IP')
-            defaultValue('192.168.10.X')
-            description('Enter the worker IP address')
-            trim(false)
-        }
     }
     definition {
         cps {

@@ -10,6 +10,12 @@ pipeline {
         ansiColor('xterm')
     }
     stages {
+        
+        stage('Remove files & folders') {
+            steps {
+                sh "rm -rf ./*"
+            }
+        }
         stage('Git checkout') {
             steps {
                 git branch: "${params.BRANCH}", url: 'https://github.com/Projet-Automation-Infra-SI-Ynov/Terraform'
@@ -18,11 +24,6 @@ pipeline {
         stage('Remove useless files and folder') {
             steps {
                 sh "sed -i 's/NAME/${params.SERVER_NAME}/g' ./main.tf"
-            }
-        }
-        stage('Remove files & folders') {
-            steps {
-                sh "rm -rf ./*"
             }
         }
         stage('Terraform init') {
