@@ -17,6 +17,12 @@ pipelineJob('CaC/backup') {
             description('Enter the backup server IP address')
             trim(false)
         }
+        stringParam {
+            name('LOG_IP')
+            defaultValue('192.168.10.X')
+            description('Enter the Graylog IP address')
+            trim(false)
+        }
     }
     definition {
         cps {
