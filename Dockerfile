@@ -34,6 +34,9 @@ RUN apt-get -y install ansible
 # SSHpass
 RUN apt-get -y install sshpass
 
+# JQ
+RUN apt-get -y install jq
+
 # Python3
 RUN apt-get install python3 python3-pip -y
 RUN pip3 -V
