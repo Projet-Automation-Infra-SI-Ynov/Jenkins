@@ -20,10 +20,5 @@ pipeline {
                 sh "sh ./k3s_launch.sh"
             }
         }
-        stages('Check the nodes') {
-            steps{
-                sh "kubectl get nodes -o wide"
-            }
-        }
     }
 }
