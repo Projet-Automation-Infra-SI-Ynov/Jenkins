@@ -46,6 +46,11 @@ pipeline {
                 sh "sed -i 's/GRAYLOG/${params.LOG_IP}/g' ./Ansible/Grafana/tasks/main.yml"
             }
         }
+        stage('Add DNS address IP') {
+            steps {
+                sh "sed -i 's/DNS2/${params.DNS_IP}/g' ./Ansible/Grafana/tasks/main.yml"
+            }
+        }
         // ----------------- Grafana -----------------
         stage('Add Grafana user address IP') {
             steps {
