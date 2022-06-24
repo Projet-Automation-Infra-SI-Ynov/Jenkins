@@ -65,6 +65,12 @@ pipelineJob('Cac/grafana') {
             description('Enter the Graylog IP address')
             trim(false)
         }
+        stringParam {
+            name('DNS_IP')
+            defaultValue('192.168.10.253')
+            description('Enter the DNS IP address')
+            trim(false)
+        }
     }
     definition {
         cps {
